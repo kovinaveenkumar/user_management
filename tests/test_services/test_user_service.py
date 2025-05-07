@@ -156,7 +156,7 @@ async def test_verify_email_with_correct_token(db_session, user):
     user = await UserService.get_by_id(db_session, user.id)
     assert user.email_verified is True
 
-# Test email verification with incorrect token
+# Test email verification with incorrect toke
 async def test_verify_email_with_incorrect_token(db_session, user):
     success = await UserService.verify_email_with_token(db_session, user.id, "wrongtoken")
     assert success is False
